@@ -1,0 +1,5 @@
+category,subcategory,subsubcategory,description,default_stakes
+Meeting,Leading,Alignment,Lead a meeting to align on goals and next steps,normal
+Meeting,Participating,,Join and contribute effectively to a meeting,normal
+Conversation,Feedback,,Give or receive feedback,normal
+Deep Work,Writing,,Focused writing or thinking,normal

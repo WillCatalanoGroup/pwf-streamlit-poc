@@ -1,0 +1,18 @@
+powers:
+  - id: pattern_spotter
+    label: Pattern-spotter
+    what_it_looks_like_at_best: Sees connections fast and clarifies options.
+    how_it_overdoes: Moves too fast for others to follow.
+    micro_move: Name 2 options and the tradeoff.
+watches:
+  - id: certainty_spike
+    label: Certainty spike
+    what_it_looks_like_at_best: Decisive when it matters.
+    how_it_overdoes: Sounds sure before alignment exists.
+    micro_move: Ask "What decision are we making today?"
+fuels:
+  - id: visible_impact
+    label: Visible impact
+    what_it_looks_like_at_best: Feels energized when work clearly helps people or outcomes.
+    how_it_overdoes: Overcommits to prove value.
+    micro_move: Define one outcome and one owner.

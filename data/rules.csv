@@ -1,0 +1,4 @@
+priority_path,stakes,pwf_trait_id,template_id,weight,notes
+Meeting > Leading > Alignment,any,pattern_spotter,baseline_meeting_lead,80,
+Meeting > Leading > Alignment,high,certainty_spike,baseline_meeting_lead,60,
+Meeting > Leading > Alignment,any,visible_impact,baseline_meeting_lead,50,
