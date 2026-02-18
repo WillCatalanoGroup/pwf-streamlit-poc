@@ -25,7 +25,10 @@ tax["category"] = tax["category"].apply(normalize)
 tax["subcategory"] = tax["subcategory"].apply(normalize)
 tax["subsubcategory"] = tax["subsubcategory"].apply(normalize)
 
-stakes = st.selectbox("Stakes", ["low", "normal", "high"])
+# Day-level state
+st.subheader("Right now")
+stress = st.selectbox("Stress level right now", ["low", "medium", "high"], index=1, key="stress_now")
+energy = st.selectbox("Energy level right now", ["low", "medium", "high"], index=1, key="energy_now")
 
 def pick_priority(idx: int):
     st.subheader(f"Priority {idx}")
@@ -47,31 +50,44 @@ def pick_priority(idx: int):
     if len(subsubs) > 0:
         subsub = st.selectbox("Detail (optional)", ["(none)"] + subsubs, index=0, key=f"subsub_{idx}")
         if subsub != "(none)":
-            return f"{cat} > {sub} > {subsub}"
-    return f"{cat} > {sub}"
+            priority_path = f"{cat} > {sub} > {subsub}"
+        else:
+            priority_path = f"{cat} > {sub}"
+    else:
+        priority_path = f"{cat} > {sub}"
 
-picks = []
+    stakes = st.selectbox("Stakes for this priority", ["low", "medium", "high"], index=1, key=f"stakes_{idx}")
+
+    return {"priority_path": priority_path, "stakes": stakes}
+
+selections = []
 for i in [1, 2, 3]:
-    choice = pick_priority(i)
-    if choice:
-        picks.append(choice)
+    sel = pick_priority(i)
+    if sel:
+        selections.append(sel)
 
 if st.button("Generate Today Cards"):
-    if not picks:
+    if not selections:
         st.warning("Pick at least one priority.")
         st.stop()
 
     cards = []
-    for p in picks:
-        cards.append(generate_card(p, stakes, user["profile"]))
+    for sel in selections:
+        cards.append(generate_card(sel["priority_path"], sel["stakes"], user["profile"]))
 
     st.divider()
     for c in cards:
-        st.markdown(f"### {c['priority_path']}")
+        st.markdown(f"### {c['priority_path']} (stakes: {c['stakes']})")
         st.write(c["blocks"]["power"])
         st.write(c["blocks"]["watch"])
         st.write(c["blocks"]["fuel"])
 
-    user["history"].append({"date": str(date.today()), "stakes": stakes, "cards": cards})
+    user["history"].append({
+        "date": str(date.today()),
+        "stress_now": stress,
+        "energy_now": energy,
+        "selections": selections,
+        "cards": cards,
+    })
     save_user(user)
     st.success("Saved to history.")
