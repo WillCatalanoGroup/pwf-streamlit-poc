@@ -1,5 +1,152 @@
 category,subcategory,subsubcategory,description,default_stakes
-Meeting,Leading,Alignment,Lead a meeting to align on goals and next steps,normal
-Meeting,Participating,,Join and contribute effectively to a meeting,normal
-Conversation,Feedback,,Give or receive feedback,normal
-Deep Work,Writing,,Focused writing or thinking,normal
+Meetings & Calls,Lead,Alignment,"Lead a meeting to align goals, roles, and next steps.",normal
+Meetings & Calls,Lead,Decision,Lead a meeting to make a decision and assign ownership.,high
+Meetings & Calls,Lead,Status,Lead a status meeting to surface blockers and adjust the plan.,normal
+Meetings & Calls,Lead,Repair,Lead a reset meeting to address tension and rebuild trust.,high
+Meetings & Calls,Contribute,Influence,"Contribute to shape a decision, direction, or priority.",high
+Meetings & Calls,Contribute,Update,Share a clear update that moves the group forward.,normal
+Meetings & Calls,Contribute,Brainstorm,Generate options without derailing the goal of the meeting.,normal
+Meetings & Calls,Align,Goals and roles,Get clarity on what we are trying to do and who owns what.,normal
+Meetings & Calls,Align,Priorities,Resolve competing priorities and agree what matters now.,high
+Meetings & Calls,Align,Ways of working,"Agree on how we will work together (process, cadence, rules).",normal
+Meetings & Calls,Decide,Pick A vs B,Choose between two options and commit.,high
+Meetings & Calls,Decide,Yes or no,Make a go/no-go decision.,high
+Meetings & Calls,Decide,Tradeoffs,Choose what to give up to get what you want.,high
+Meetings & Calls,Repair,Clear tension,Address friction before it spreads.,high
+Meetings & Calls,Repair,Reset expectations,"Re-clarify standards, roles, or agreements.",high
+Meetings & Calls,Repair,Rebuild trust,Repair a relationship or working dynamic.,high
+Messages (Email/Slack/Text),Clear the inbox,Triage,Sort what matters now vs later.,normal
+Messages (Email/Slack/Text),Clear the inbox,Close loops,"Answer, delegate, or schedule the next step.",normal
+Messages (Email/Slack/Text),Clear the inbox,Unblock,Respond to remove someone else’s blocker.,high
+Messages (Email/Slack/Text),Write a crisp update,Status update,"Share progress, blockers, and next steps.",normal
+Messages (Email/Slack/Text),Write a crisp update,Decision update,Document a decision and what changes now.,high
+Messages (Email/Slack/Text),Write a crisp update,Next-steps update,Capture owners and deadlines in plain language.,normal
+Messages (Email/Slack/Text),Ask for what you need,Information,Ask for missing info so you can move.,normal
+Messages (Email/Slack/Text),Ask for what you need,Approval,Ask for a decision or sign-off.,high
+Messages (Email/Slack/Text),Ask for what you need,Help,Ask for support or a favor clearly.,normal
+Messages (Email/Slack/Text),Resolve a misunderstanding,Tone repair,Fix how something landed.,high
+Messages (Email/Slack/Text),Resolve a misunderstanding,Facts and clarity,Correct confusion and restate the point simply.,normal
+Messages (Email/Slack/Text),Resolve a misunderstanding,Boundary,Set a boundary without escalating.,high
+Messages (Email/Slack/Text),Coordinate logistics,Schedule,"Set time, place, and agenda.",normal
+Messages (Email/Slack/Text),Coordinate logistics,Handoff,Confirm who owns what and when.,normal
+Messages (Email/Slack/Text),Coordinate logistics,Dependencies,Sync across people or teams.,normal
+Focus Work,Think it through,Problem framing,Define the real problem and why it matters.,normal
+Focus Work,Think it through,Options,Generate options and tradeoffs.,normal
+Focus Work,Think it through,Plan,Turn thinking into a simple plan.,normal
+Focus Work,Build/create,Analysis,Do analysis that supports a decision or deliverable.,normal
+Focus Work,Build/create,Design,"Create a design, approach, or outline.",normal
+Focus Work,Build/create,Make the thing,"Produce the core output (draft, model, plan).",normal
+Focus Work,Fix/clean up,Simplify,Reduce complexity and remove clutter.,normal
+Focus Work,Fix/clean up,Debug,Find and fix what is broken.,normal
+Focus Work,Fix/clean up,Reduce risk,Tighten the parts most likely to fail.,high
+Focus Work,Learn/research,Quick scan,Get enough to move today.,normal
+Focus Work,Learn/research,Deep dive,Build real understanding before acting.,normal
+Focus Work,Learn/research,Synthesize,Turn sources into a viewpoint or recommendation.,normal
+Focus Work,Finish,Package,"Make it clean, clear, and ready to share.",normal
+Focus Work,Finish,Send,Ship it to the right people.,normal
+Focus Work,Finish,Follow-through,Confirm it landed and next steps are clear.,normal
+Writing & Docs,Draft,Email/message,Write the first version of an email or message.,normal
+Writing & Docs,Draft,Doc/one-pager,Write the first version of a doc or one-pager.,normal
+Writing & Docs,Draft,Slides,Draft slides or a talk track.,normal
+Writing & Docs,Edit,Shorten,Cut length and keep the point.,normal
+Writing & Docs,Edit,Clarify,Remove ambiguity and tighten language.,normal
+Writing & Docs,Edit,Strengthen,Make the argument or story stronger.,normal
+Writing & Docs,Clarify,Purpose,State what this is for and what you want.,normal
+Writing & Docs,Clarify,Instructions,Write steps someone can actually follow.,normal
+Writing & Docs,Clarify,Decision framing,"State options, criteria, and recommendation.",high
+Writing & Docs,Document,How-to,Create a reference others can repeat.,normal
+Writing & Docs,Document,Notes and recap,Capture what happened and what’s next.,normal
+Writing & Docs,Document,Decision record,Record what was decided and why.,high
+Writing & Docs,Send,Internal,Share with your team or company.,normal
+Writing & Docs,Send,External,Share with a client or outside partner.,high
+Writing & Docs,Send,Ask for feedback,Send for review with clear questions.,normal
+Decisions & Tradeoffs,Choose a direction,A vs B,Pick between two paths.,high
+Decisions & Tradeoffs,Choose a direction,Bet size,Decide how big to go.,high
+Decisions & Tradeoffs,Choose a direction,Stop/start/continue,"Decide what to stop, start, and keep.",high
+Decisions & Tradeoffs,Prioritize,Today,Pick the 1 to 3 things that matter today.,normal
+Decisions & Tradeoffs,Prioritize,This week,Set weekly priorities and tradeoffs.,high
+Decisions & Tradeoffs,Prioritize,This quarter,Set bigger priorities and what will wait.,high
+Decisions & Tradeoffs,Define the decision rule,Criteria,Define what “good” means.,high
+Decisions & Tradeoffs,Define the decision rule,Constraints,Name what you cannot violate.,high
+Decisions & Tradeoffs,Define the decision rule,Tradeoff rule,Name what you will sacrifice to win.,high
+Decisions & Tradeoffs,Get buy-in,1:1 alignment,Align with one key person.,high
+Decisions & Tradeoffs,Get buy-in,Group alignment,Align with a group quickly.,high
+Decisions & Tradeoffs,Get buy-in,Pre-wire,Reduce surprises before the meeting.,high
+Decisions & Tradeoffs,Commit and communicate,Assign owners,"Name owners, deadlines, and next steps.",high
+Decisions & Tradeoffs,Commit and communicate,Broadcast,Communicate the decision broadly.,high
+Decisions & Tradeoffs,Commit and communicate,Hold the line,Prevent backsliding and scope creep.,high
+Planning & Priorities,Scope the work,In/out,Define what is included and excluded.,normal
+Planning & Priorities,Scope the work,Success criteria,Define what done looks like.,normal
+Planning & Priorities,Scope the work,Assumptions,Name assumptions and unknowns.,normal
+Planning & Priorities,Sequence,Milestones,Set checkpoints and order of work.,normal
+Planning & Priorities,Sequence,Dependencies,Map what must happen first.,normal
+Planning & Priorities,Sequence,Critical path,Identify the one path that drives timing.,high
+Planning & Priorities,Resource,People,Assign the right people to the work.,normal
+Planning & Priorities,Resource,Time,Protect time and focus blocks.,normal
+Planning & Priorities,Resource,Budget/tools,Secure budget or tools needed.,normal
+Planning & Priorities,Set milestones,Weekly cadence,Set weekly checkpoints.,normal
+Planning & Priorities,Set milestones,Sprint plan,Plan a sprint and outcomes.,normal
+Planning & Priorities,Set milestones,Launch plan,Plan a launch or deadline event.,high
+Planning & Priorities,Risk plan,Identify risks,Name the top failure modes.,high
+Planning & Priorities,Risk plan,Mitigations,Decide what you’ll do about them.,high
+Planning & Priorities,Risk plan,Contingencies,Define what triggers a pivot.,high
+Review & Quality,Review work,Approve,Approve and set next steps.,normal
+Review & Quality,Review work,Revise,Give feedback that improves the work.,normal
+Review & Quality,Review work,Redirect,Change direction before more work happens.,high
+Review & Quality,QA/check details,Accuracy,"Check numbers, facts, and logic.",normal
+Review & Quality,QA/check details,Completeness,Check for missing pieces.,normal
+Review & Quality,QA/check details,Edge cases,Check what breaks under pressure.,high
+Review & Quality,Sanity check,Story,Does this tell a clear story?,normal
+Review & Quality,Sanity check,Alignment,Does this match the goal and strategy?,high
+Review & Quality,Sanity check,Simplicity,Is this as simple as it can be?,normal
+Review & Quality,Protect the standard,Brand/voice,Match the standard for how we show up.,normal
+Review & Quality,Protect the standard,Compliance,"Meet rules, policy, or legal needs.",high
+Review & Quality,Protect the standard,Reliability,Prevent avoidable failures.,high
+Review & Quality,Learn from results,Retro,Run a quick retrospective.,normal
+Review & Quality,Learn from results,Metrics,Review metrics and what they mean.,normal
+Review & Quality,Learn from results,Adjust plan,Change what you do next.,normal
+People (Leading or Managing),1:1 / check-in,Support,Support the person and remove blockers.,normal
+People (Leading or Managing),1:1 / check-in,Clarity,"Align on goals, roles, and expectations.",normal
+People (Leading or Managing),1:1 / check-in,Accountability,Confirm commitments and follow-through.,high
+People (Leading or Managing),Feedback,Positive,Reinforce what’s working.,normal
+People (Leading or Managing),Feedback,Corrective,Correct behavior or reset expectations.,high
+People (Leading or Managing),Feedback,Receive,Receive feedback without defensiveness.,high
+People (Leading or Managing),Delegate,Task handoff,Hand off a task with clear success criteria.,normal
+People (Leading or Managing),Delegate,Decision handoff,Give decision rights with guardrails.,high
+People (Leading or Managing),Delegate,Scope boundary,Prevent ownership confusion.,high
+People (Leading or Managing),Coach,Skill,Build a specific skill.,normal
+People (Leading or Managing),Coach,Behavior,Shift a repeated behavior pattern.,high
+People (Leading or Managing),Coach,Confidence,Help someone step up without rescuing.,normal
+People (Leading or Managing),Handle a hard moment,Conflict,De-escalate and move forward.,high
+People (Leading or Managing),Handle a hard moment,Performance,Address performance clearly.,high
+People (Leading or Managing),Handle a hard moment,Boundaries,Set limits and expectations.,high
+Customer/Client,Deliver value,Work session,Do the work live with the client.,normal
+Customer/Client,Deliver value,Deliverable,Ship a client-facing output.,high
+Customer/Client,Deliver value,Problem solve,Solve a client issue quickly.,high
+Customer/Client,Set expectations,Scope,Clarify what is in/out.,high
+Customer/Client,Set expectations,Timeline,Set timeline and cadence.,normal
+Customer/Client,Set expectations,Success criteria,Define what success looks like.,high
+Customer/Client,Build trust,Credibility,"Be clear, prepared, and consistent.",normal
+Customer/Client,Build trust,Responsiveness,Respond in a way that reduces anxiety.,normal
+Customer/Client,Build trust,Clarity,Say what will happen next.,normal
+Customer/Client,Handle friction,Pushback,Handle disagreement or skepticism.,high
+Customer/Client,Handle friction,Change request,Manage scope or direction changes.,high
+Customer/Client,Handle friction,Disappointment,Repair a miss without excuses.,high
+Customer/Client,Expand,Next value,Identify the next useful step.,normal
+Customer/Client,Expand,Renewal,Support renewal with outcomes.,normal
+Customer/Client,Expand,Referral,Ask for introductions appropriately.,normal
+Admin & Coordination,Schedule,Book time,Schedule the thing with purpose.,normal
+Admin & Coordination,Schedule,Prep,Prep for a meeting or event.,normal
+Admin & Coordination,Schedule,Protect time,Block focus time and defend it.,normal
+Admin & Coordination,Process tasks,Expenses,Submit expenses or reimbursements.,normal
+Admin & Coordination,Process tasks,Approvals,Process approvals or sign-offs.,normal
+Admin & Coordination,Process tasks,Forms,Complete required forms.,normal
+Admin & Coordination,Track and follow up,Waiting on,Track what you are waiting for.,normal
+Admin & Coordination,Track and follow up,Reminders,Send a nudge that gets action.,normal
+Admin & Coordination,Track and follow up,Confirm,Confirm completion and close the loop.,normal
+Admin & Coordination,Handoff,Brief,Create a short brief for someone else.,normal
+Admin & Coordination,Handoff,Artifacts,"Share the right docs, links, and context.",normal
+Admin & Coordination,Handoff,Ownership,Make ownership and next steps explicit.,normal
+Admin & Coordination,Reset the system,Lists,Clean up task lists and priorities.,normal
+Admin & Coordination,Reset the system,Files,Organize files so you can find things.,normal
+Admin & Coordination,Reset the system,Inbox zero,Clear and reset your inbox.,normal
