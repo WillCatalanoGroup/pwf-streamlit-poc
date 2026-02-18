@@ -2,3 +2,8 @@
   power_block: "Power 💪: Use {power_label}. {power_micro_move}"
   watch_block: "Watch 👀: Notice {watch_label}. {watch_micro_move}"
   fuel_block: "Fuel 🔥: Protect {fuel_label}. {fuel_micro_move}"
+
+- template_id: generic_any_priority
+  power_block: "Power 💪: Use {power_label} for this: {power_micro_move}"
+  watch_block: "Watch 👀: Watch for {watch_label}: {watch_micro_move}"
+  fuel_block: "Fuel 🔥: Protect {fuel_label}: {fuel_micro_move}"

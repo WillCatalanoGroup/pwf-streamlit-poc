@@ -27,25 +27,23 @@ def generate_card(priority_path: str, stakes: str, profile: Dict[str, Any]) -> D
     templates = load_templates()
     rules = load_rules()
 
-    # Match rules for this priority path and stakes
     candidates = rules[
         (rules["priority_path"] == priority_path) &
         ((rules["stakes"] == stakes) | (rules["stakes"] == "any"))
     ]
 
     if candidates.empty:
-        # fallback: try any stakes
-        candidates = rules[(rules["priority_path"] == priority_path) & (rules["stakes"] == "any")]
+        # Fallback: use a generic template for any unmapped priority path
+        template_id = "generic_any_priority"
+    else:
+        top = candidates.sort_values("weight", ascending=False).iloc[0]
+        template_id = top["template_id"]
 
-    if candidates.empty:
-        raise ValueError(f"No rules found for priority_path='{priority_path}'")
-
-    top = candidates.sort_values("weight", ascending=False).iloc[0]
-    template = templates[top["template_id"]]
+    template = templates[template_id]
 
     power = next(x for x in traits["powers"] if x["id"] == profile["power_id"])
     watch = next(x for x in traits["watches"] if x["id"] == profile["watch_id"])
     fuel  = next(x for x in traits["fuels"]  if x["id"] == profile["fuel_id"])
 
     blocks = render_card(template, power, watch, fuel)
-    return {"priority_path": priority_path, "stakes": stakes, "blocks": blocks, "template_id": top["template_id"]}
+    return {"priority_path": priority_path, "stakes": stakes, "blocks": blocks, "template_id": template_id}
