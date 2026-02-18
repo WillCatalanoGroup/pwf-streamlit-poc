@@ -16,28 +16,51 @@ if not user.get("profile"):
     st.warning("No profile yet. Go to Onboarding.")
     st.stop()
 
-tax = pd.read_csv("data/taxonomy.csv")
+tax = pd.read_csv("data/taxonomy.csv").fillna("")
 
-def build_path(row) -> str:
-    parts = [row["category"], row["subcategory"]]
-    subsub = str(row.get("subsubcategory") or "").strip()
-    if subsub and subsub.lower() != "nan":
-        parts.append(subsub)
-    return " > ".join(parts)
+def normalize(s: str) -> str:
+    return str(s).strip()
 
-tax["priority_path"] = tax.apply(build_path, axis=1)
-paths = tax["priority_path"].unique().tolist()
+tax["category"] = tax["category"].apply(normalize)
+tax["subcategory"] = tax["subcategory"].apply(normalize)
+tax["subsubcategory"] = tax["subsubcategory"].apply(normalize)
 
 stakes = st.selectbox("Stakes", ["low", "normal", "high"])
 
-st.subheader("Pick up to 3 priorities")
+def pick_priority(idx: int):
+    st.subheader(f"Priority {idx}")
+
+    categories = sorted([c for c in tax["category"].unique().tolist() if c])
+    cat = st.selectbox("Category", ["(none)"] + categories, index=0, key=f"cat_{idx}")
+    if cat == "(none)":
+        return None
+
+    sub_df = tax[tax["category"] == cat]
+    subcategories = sorted([s for s in sub_df["subcategory"].unique().tolist() if s])
+    sub = st.selectbox("Subcategory", ["(none)"] + subcategories, index=0, key=f"sub_{idx}")
+    if sub == "(none)":
+        return None
+
+    subsub_df = sub_df[sub_df["subcategory"] == sub]
+    subsubs = sorted([s for s in subsub_df["subsubcategory"].unique().tolist() if s])
+
+    if len(subsubs) > 0:
+        subsub = st.selectbox("Detail (optional)", ["(none)"] + subsubs, index=0, key=f"subsub_{idx}")
+        if subsub != "(none)":
+            return f"{cat} > {sub} > {subsub}"
+    return f"{cat} > {sub}"
+
 picks = []
-for i in range(1, 4):
-    pick = st.selectbox(f"Priority {i}", ["(none)"] + paths, index=0, key=f"p{i}")
-    if pick != "(none)":
-        picks.append(pick)
+for i in [1, 2, 3]:
+    choice = pick_priority(i)
+    if choice:
+        picks.append(choice)
 
 if st.button("Generate Today Cards"):
+    if not picks:
+        st.warning("Pick at least one priority.")
+        st.stop()
+
     cards = []
     for p in picks:
         cards.append(generate_card(p, stakes, user["profile"]))
