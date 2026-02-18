@@ -1,51 +1,51 @@
-category,subcategory,subsubcategory,description,default_stakes
-Meetings & Calls,Lead (you own the agenda and outcomes),,you own the agenda and outcomes,normal
-Meetings & Calls,Contribute (you need to influence or add signal),,you need to influence or add signal,normal
-Meetings & Calls,"Align (resolve confusion, get everyone on the same page)",,"resolve confusion, get everyone on the same page",normal
-Meetings & Calls,Decide (turn options into a commitment),,turn options into a commitment,normal
-Meetings & Calls,"Repair (tension, conflict, or trust needs attention)",,"tension, conflict, or trust needs attention",normal
-Messages (Email/Slack/Text),Clear the inbox (triage and respond fast),,triage and respond fast,normal
-Messages (Email/Slack/Text),"Write a crisp update (status, decision, next steps)",,"status, decision, next steps",normal
-Messages (Email/Slack/Text),"Ask for what you need (request, unblock, confirm)",,"request, unblock, confirm",normal
-Messages (Email/Slack/Text),"Resolve a misunderstanding (tone, intent, confusion)",,"tone, intent, confusion",normal
-Messages (Email/Slack/Text),"Coordinate logistics (times, handoffs, who owns what)",,"times, handoffs, who owns what",normal
-Focus Work,"Think it through (sense-making, strategy, problem framing)",,"sense-making, strategy, problem framing",normal
-Focus Work,"Build/create (make the thing: analysis, design, draft, model)",,"make the thing: analysis, design, draft, model",normal
-Focus Work,"Fix/clean up (refactor, simplify, reduce mess)",,"refactor, simplify, reduce mess",normal
-Focus Work,"Learn/research (read, synthesize, form a view)",,"read, synthesize, form a view",normal
-Focus Work,"Finish (close loops, package, ship)",,"close loops, package, ship",normal
-Writing & Docs,"Draft (first version, get it out)",,"first version, get it out",normal
-Writing & Docs,"Edit (tighten, simplify, improve flow)",,"tighten, simplify, improve flow",normal
-Writing & Docs,"Clarify (turn fuzzy into clear: purpose, plan, instructions)",,"turn fuzzy into clear: purpose, plan, instructions",normal
-Writing & Docs,Document (create a reference others can use),,create a reference others can use,normal
-Writing & Docs,Send (publish/share with the right framing),,publish/share with the right framing,normal
-Decisions & Tradeoffs,Choose a direction (pick A vs B),,pick A vs B,normal
-Decisions & Tradeoffs,"Prioritize (what matters today, what waits)",,"what matters today, what waits",normal
-Decisions & Tradeoffs,"Define the decision rule (what “good” means, how we’ll decide)",,"what “good” means, how we’ll decide",normal
-Decisions & Tradeoffs,Get buy-in (alignment and commitment),,alignment and commitment,normal
-Decisions & Tradeoffs,"Commit and communicate (announce, assign, move)",,"announce, assign, move",normal
-Planning & Priorities,Scope the work (what is in/out),,what is in/out,normal
-Planning & Priorities,Sequence (what happens first/next/later),,what happens first/next/later,normal
-Planning & Priorities,"Resource (time, people, budget, tools)",,"time, people, budget, tools",normal
-Planning & Priorities,Set milestones (checkpoints and owners),,checkpoints and owners,normal
-Planning & Priorities,Risk plan (what could go wrong and how we’ll handle it),,what could go wrong and how we’ll handle it,normal
-Review & Quality,"Review work (give feedback, approve or redirect)",,"give feedback, approve or redirect",normal
-Review & Quality,"QA/check details (accuracy, completeness, edge cases)",,"accuracy, completeness, edge cases",normal
-Review & Quality,Sanity check (does this make sense overall),,does this make sense overall,normal
-Review & Quality,"Protect the standard (quality bar, brand, compliance)",,"quality bar, brand, compliance",normal
-Review & Quality,"Learn from results (what worked, what didn’t, adjust)",,"what worked, what didn’t, adjust",normal
-People (Leading or Managing Others),"1:1 / check-in (support, clarity, alignment)",,"support, clarity, alignment",normal
-People (Leading or Managing Others),"Feedback (give, receive, or reset expectations)",,"give, receive, or reset expectations",normal
-People (Leading or Managing Others),Delegate (hand off ownership clearly),,hand off ownership clearly,normal
-People (Leading or Managing Others),"Coach (develop capability, unblock growth)",,"develop capability, unblock growth",normal
-People (Leading or Managing Others),"Handle a hard moment (conflict, performance, boundaries)",,"conflict, performance, boundaries",normal
-Customer/Client,"Deliver value (do the work, move it forward)",,"do the work, move it forward",normal
-Customer/Client,"Set expectations (scope, timeline, success criteria)",,"scope, timeline, success criteria",normal
-Customer/Client,"Build trust (credibility, responsiveness, clarity)",,"credibility, responsiveness, clarity",normal
-Customer/Client,"Handle friction (pushback, disappointment, change request)",,"pushback, disappointment, change request",normal
-Customer/Client,"Expand (identify next value, renew, upsell without being salesy)",,"identify next value, renew, upsell without being salesy",normal
-Admin & Coordination,"Schedule (meetings, travel, calendars)",,"meetings, travel, calendars",normal
-Admin & Coordination,"Process tasks (expenses, forms, approvals)",,"expenses, forms, approvals",normal
-Admin & Coordination,"Track and follow up (waiting on, reminders, nudges)",,"waiting on, reminders, nudges",normal
-Admin & Coordination,Handoff (transfer work cleanly to someone else),,transfer work cleanly to someone else,normal
-Admin & Coordination,"Reset the system (clean up lists, files, workspace)",,"clean up lists, files, workspace",normal
+"category_id","category_label","subcategory_id","subcategory_label","subsubcategory_id","subsubcategory_label","description"
+"meetings","Meetings & Calls","lead","Lead (you own the agenda and outcomes)","","","you own the agenda and outcomes"
+"meetings","Meetings & Calls","contribute","Contribute (you need to influence or add signal)","","","you need to influence or add signal"
+"meetings","Meetings & Calls","align","Align (resolve confusion, get everyone on the same page)","","","resolve confusion, get everyone on the same page"
+"meetings","Meetings & Calls","decide","Decide (turn options into a commitment)","","","turn options into a commitment"
+"meetings","Meetings & Calls","repair","Repair (tension, conflict, or trust needs attention)","","","tension, conflict, or trust needs attention"
+"messages","Messages (Email/Slack/Text)","clear_inbox","Clear the inbox (triage and respond fast)","","","triage and respond fast"
+"messages","Messages (Email/Slack/Text)","crisp_update","Write a crisp update (status, decision, next steps)","","","status, decision, next steps"
+"messages","Messages (Email/Slack/Text)","ask_need","Ask for what you need (request, unblock, confirm)","","","request, unblock, confirm"
+"messages","Messages (Email/Slack/Text)","misunderstanding","Resolve a misunderstanding (tone, intent, confusion)","","","tone, intent, confusion"
+"messages","Messages (Email/Slack/Text)","logistics","Coordinate logistics (times, handoffs, who owns what)","","","times, handoffs, who owns what"
+"focus","Focus Work","think","Think it through (sense-making, strategy, problem framing)","","","sense-making, strategy, problem framing"
+"focus","Focus Work","build","Build/create (make the thing: analysis, design, draft, model)","","","make the thing: analysis, design, draft, model"
+"focus","Focus Work","fix","Fix/clean up (refactor, simplify, reduce mess)","","","refactor, simplify, reduce mess"
+"focus","Focus Work","learn","Learn/research (read, synthesize, form a view)","","","read, synthesize, form a view"
+"focus","Focus Work","finish","Finish (close loops, package, ship)","","","close loops, package, ship"
+"writing","Writing & Docs","draft","Draft (first version, get it out)","","","first version, get it out"
+"writing","Writing & Docs","edit","Edit (tighten, simplify, improve flow)","","","tighten, simplify, improve flow"
+"writing","Writing & Docs","clarify","Clarify (turn fuzzy into clear: purpose, plan, instructions)","","","turn fuzzy into clear: purpose, plan, instructions"
+"writing","Writing & Docs","document","Document (create a reference others can use)","","","create a reference others can use"
+"writing","Writing & Docs","send","Send (publish/share with the right framing)","","","publish/share with the right framing"
+"decisions","Decisions & Tradeoffs","choose_dir","Choose a direction (pick A vs B)","","","pick A vs B"
+"decisions","Decisions & Tradeoffs","prioritize","Prioritize (what matters today, what waits)","","","what matters today, what waits"
+"decisions","Decisions & Tradeoffs","decision_rule","Define the decision rule (what good means, how we'll decide)","","","what good means, how we'll decide"
+"decisions","Decisions & Tradeoffs","buy_in","Get buy-in (alignment and commitment)","","","alignment and commitment"
+"decisions","Decisions & Tradeoffs","commit","Commit and communicate (announce, assign, move)","","","announce, assign, move"
+"planning","Planning & Priorities","scope","Scope the work (what is in/out)","","","what is in/out"
+"planning","Planning & Priorities","sequence","Sequence (what happens first/next/later)","","","what happens first/next/later"
+"planning","Planning & Priorities","resource","Resource (time, people, budget, tools)","","","time, people, budget, tools"
+"planning","Planning & Priorities","milestones","Set milestones (checkpoints and owners)","","","checkpoints and owners"
+"planning","Planning & Priorities","risk","Risk plan (what could go wrong and how we'll handle it)","","","what could go wrong and how we'll handle it"
+"quality","Review & Quality","review","Review work (give feedback, approve or redirect)","","","give feedback, approve or redirect"
+"quality","Review & Quality","qa","QA/check details (accuracy, completeness, edge cases)","","","accuracy, completeness, edge cases"
+"quality","Review & Quality","sanity","Sanity check (does this make sense overall)","","","does this make sense overall"
+"quality","Review & Quality","standard","Protect the standard (quality bar, brand, compliance)","","","quality bar, brand, compliance"
+"quality","Review & Quality","learn_results","Learn from results (what worked, what didn't, adjust)","","","what worked, what didn't, adjust"
+"people","People (Leading or Managing Others)","checkin","1:1 / check-in (support, clarity, alignment)","","","support, clarity, alignment"
+"people","People (Leading or Managing Others)","feedback","Feedback (give, receive, or reset expectations)","","","give, receive, or reset expectations"
+"people","People (Leading or Managing Others)","delegate","Delegate (hand off ownership clearly)","","","hand off ownership clearly"
+"people","People (Leading or Managing Others)","coach","Coach (develop capability, unblock growth)","","","develop capability, unblock growth"
+"people","People (Leading or Managing Others)","hard_moment","Handle a hard moment (conflict, performance, boundaries)","","","conflict, performance, boundaries"
+"client","Customer/Client","deliver","Deliver value (do the work, move it forward)","","","do the work, move it forward"
+"client","Customer/Client","expectations","Set expectations (scope, timeline, success criteria)","","","scope, timeline, success criteria"
+"client","Customer/Client","trust","Build trust (credibility, responsiveness, clarity)","","","credibility, responsiveness, clarity"
+"client","Customer/Client","friction","Handle friction (pushback, disappointment, change request)","","","pushback, disappointment, change request"
+"client","Customer/Client","expand","Expand (identify next value, renew, upsell without being salesy)","","","identify next value, renew, upsell without being salesy"
+"admin","Admin & Coordination","schedule","Schedule (meetings, travel, calendars)","","","meetings, travel, calendars"
+"admin","Admin & Coordination","process","Process tasks (expenses, forms, approvals)","","","expenses, forms, approvals"
+"admin","Admin & Coordination","followup","Track and follow up (waiting on, reminders, nudges)","","","waiting on, reminders, nudges"
+"admin","Admin & Coordination","handoff","Handoff (transfer work cleanly to someone else)","","","transfer work cleanly to someone else"
+"admin","Admin & Coordination","reset","Reset the system (clean up lists, files, workspace)","","","clean up lists, files, workspace"
