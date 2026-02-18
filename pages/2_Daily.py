@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
 from datetime import date
+from core.auth import require_password
 from core.storage import load_user, save_user
 from core.rules_engine import generate_card
+
+require_password()
 
 st.title("Daily")
 

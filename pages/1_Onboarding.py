@@ -1,6 +1,9 @@
 import streamlit as st
 import yaml
+from core.auth import require_password
 from core.storage import load_user, save_user
+
+require_password()
 
 st.title("Onboarding")
 

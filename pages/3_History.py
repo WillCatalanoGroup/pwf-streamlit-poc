@@ -1,5 +1,8 @@
 import streamlit as st
+from core.auth import require_password
 from core.storage import load_user
+
+require_password()
 
 st.title("History")
 
