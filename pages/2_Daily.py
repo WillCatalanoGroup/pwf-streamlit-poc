@@ -18,47 +18,59 @@ if not user.get("profile"):
 
 tax = pd.read_csv("data/taxonomy.csv").fillna("")
 
-def normalize(s: str) -> str:
-    return str(s).strip()
-
-tax["category"] = tax["category"].apply(normalize)
-tax["subcategory"] = tax["subcategory"].apply(normalize)
-tax["subsubcategory"] = tax["subsubcategory"].apply(normalize)
-
-# Day-level state
-st.subheader("Right now")
-stress = st.selectbox("Stress level right now", ["low", "medium", "high"], index=1, key="stress_now")
-energy = st.selectbox("Energy level right now", ["low", "medium", "high"], index=1, key="energy_now")
-
 def pick_priority(idx: int):
     st.subheader(f"Priority {idx}")
 
-    categories = sorted([c for c in tax["category"].unique().tolist() if c])
-    cat = st.selectbox("Category", ["(none)"] + categories, index=0, key=f"cat_{idx}")
-    if cat == "(none)":
+    cats = (
+        tax[["category_id", "category_label"]]
+        .drop_duplicates()
+        .sort_values("category_label")
+        .to_dict(orient="records")
+    )
+    cat_label_list = [c["category_label"] for c in cats]
+    cat_label = st.selectbox("Category", ["(none)"] + cat_label_list, index=0, key=f"cat_{idx}")
+    if cat_label == "(none)":
         return None
 
-    sub_df = tax[tax["category"] == cat]
-    subcategories = sorted([s for s in sub_df["subcategory"].unique().tolist() if s])
-    sub = st.selectbox("Subcategory", ["(none)"] + subcategories, index=0, key=f"sub_{idx}")
-    if sub == "(none)":
+    cat_id = next(c["category_id"] for c in cats if c["category_label"] == cat_label)
+
+    sub_df = tax[tax["category_id"] == cat_id][["subcategory_id", "subcategory_label"]].drop_duplicates()
+    subs = sub_df.sort_values("subcategory_label").to_dict(orient="records")
+    sub_label_list = [s["subcategory_label"] for s in subs]
+    sub_label = st.selectbox("Subcategory", ["(none)"] + sub_label_list, index=0, key=f"sub_{idx}")
+    if sub_label == "(none)":
         return None
 
-    subsub_df = sub_df[sub_df["subcategory"] == sub]
-    subsubs = sorted([s for s in subsub_df["subsubcategory"].unique().tolist() if s])
+    sub_id = next(s["subcategory_id"] for s in subs if s["subcategory_label"] == sub_label)
 
+    subsub_df = tax[(tax["category_id"] == cat_id) & (tax["subcategory_id"] == sub_id)]
+    subsubs = subsub_df[["subsubcategory_id", "subsubcategory_label"]].drop_duplicates()
+    subsubs = subsubs[subsubs["subsubcategory_id"].astype(str).str.strip() != ""]
+
+    subsub_id = ""
+    subsub_label = ""
     if len(subsubs) > 0:
-        subsub = st.selectbox("Detail (optional)", ["(none)"] + subsubs, index=0, key=f"subsub_{idx}")
-        if subsub != "(none)":
-            priority_path = f"{cat} > {sub} > {subsub}"
-        else:
-            priority_path = f"{cat} > {sub}"
-    else:
-        priority_path = f"{cat} > {sub}"
+        subsubs = subsubs.sort_values("subsubcategory_label").to_dict(orient="records")
+        subsub_label_list = [s["subsubcategory_label"] for s in subsubs]
+        chosen = st.selectbox("Detail (optional)", ["(none)"] + subsub_label_list, index=0, key=f"subsub_{idx}")
+        if chosen != "(none)":
+            subsub_label = chosen
+            subsub_id = next(s["subsubcategory_id"] for s in subsubs if s["subsubcategory_label"] == chosen)
 
     stakes = st.selectbox("Stakes for this priority", ["low", "medium", "high"], index=1, key=f"stakes_{idx}")
 
-    return {"priority_path": priority_path, "stakes": stakes}
+    if subsub_id:
+        priority_key = f"{cat_id} > {sub_id} > {subsub_id}"
+        priority_display = f"{cat_label} > {sub_label} > {subsub_label}"
+    else:
+        priority_key = f"{cat_id} > {sub_id}"
+        priority_display = f"{cat_label} > {sub_label}"
+
+    return {"priority_key": priority_key, "priority_display": priority_display, "stakes": stakes}
+
+st.subheader("Right now")
+stress = st.selectbox("Stress level right now", ["low", "medium", "high"], index=1, key="stress_now")
+energy = st.selectbox("Energy level right now", ["low", "medium", "high"], index=1, key="energy_now")
 
 selections = []
 for i in [1, 2, 3]:
@@ -73,11 +85,14 @@ if st.button("Generate Today Cards"):
 
     cards = []
     for sel in selections:
-        cards.append(generate_card(sel["priority_path"], sel["stakes"], user["profile"]))
+        card = generate_card(sel["priority_key"], sel["stakes"], user["profile"])
+        card["priority_display"] = sel["priority_display"]
+        cards.append(card)
 
     st.divider()
     for c in cards:
-        st.markdown(f"### {c['priority_path']} (stakes: {c['stakes']})")
+        shown = c.get("priority_display") or c.get("priority_path")
+        st.markdown(f"### {shown} (stakes: {c['stakes']})")
         st.write(c["blocks"]["power"])
         st.write(c["blocks"]["watch"])
         st.write(c["blocks"]["fuel"])
