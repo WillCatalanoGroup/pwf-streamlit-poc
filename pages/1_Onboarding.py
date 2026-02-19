@@ -1,31 +1,20 @@
 import streamlit as st
-import yaml
 from core.auth import require_password
-from core.storage import load_user, save_user
+from core.nav import set_user_id, init_user_if_missing
 
 require_password()
 
 st.title("Onboarding")
+st.write("Enter your User ID")
 
-user_id = st.text_input("User ID", value="demo_user")
-user = load_user(user_id)
+user_id = st.text_input("User ID", value=st.session_state.get("user_id", "")).strip()
 
-traits = yaml.safe_load(open("data/pwf_traits.yml", "r", encoding="utf-8"))
+# Place Next button aligned to the right, below the input field
+left, right = st.columns([6, 1])
+with right:
+    next_clicked = st.button("Next", disabled=(user_id == ""), use_container_width=True)
 
-power_labels = {t["label"]: t["id"] for t in traits["powers"]}
-watch_labels = {t["label"]: t["id"] for t in traits["watches"]}
-fuel_labels  = {t["label"]: t["id"] for t in traits["fuels"]}
-
-st.subheader("Pick your top 1 in each (PoC)")
-power = st.selectbox("Power 💪", list(power_labels.keys()))
-watch = st.selectbox("Watch 👀", list(watch_labels.keys()))
-fuel  = st.selectbox("Fuel 🔥", list(fuel_labels.keys()))
-
-if st.button("Save profile"):
-    user["profile"] = {
-        "power_id": power_labels[power],
-        "watch_id": watch_labels[watch],
-        "fuel_id": fuel_labels[fuel],
-    }
-    save_user(user)
-    st.success("Saved. Go to Daily.")
+if next_clicked:
+    set_user_id(user_id)
+    init_user_if_missing(user_id)
+    st.switch_page("pages/2_Power.py")
